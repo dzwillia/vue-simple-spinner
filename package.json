@@ -1,6 +1,6 @@
 {
   "name": "vue-simple-spinner",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple, flexible spinner for Vue.js",
   "author": "David Z. Williams <dave@flex.io>",
   "main": "dist/vue-simple-spinner.js",
