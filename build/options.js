@@ -13,7 +13,8 @@ const banner =
 module.exports = {
   banner,
 
-  isProduction: process.env.NODE_ENV === 'production',
+  isProduction: true,
+  //isProduction: process.env.NODE_ENV === 'production',
 
   paths: {
     root: path.join(__dirname, '..'),
