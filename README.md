@@ -74,3 +74,5 @@ vue-simple-spinner is open source and released under the [MIT License](LICENSE).
 Copyright (c) 2017 [David Z Williams](https://twitter.com/padredaveo).
 
 > *PS: I would love to know if you're using vue-simple-spinner. Tweet to me at [@padredaveo](https://twitter.com/padredaveo)*.
+
+
