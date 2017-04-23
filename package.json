@@ -19,10 +19,10 @@
   "keywords": [
     "vue",
     "vuejs",
-    "components",
-    "table",
-    "grid",
     "ui"
+    "components",
+    "spinner",
+    "progress"
   ],
   "license": "MIT",
   "bugs": {
