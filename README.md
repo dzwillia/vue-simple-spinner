@@ -3,8 +3,12 @@
 
 vue-simple-spinner is designed to be a lightweight [Vue.js](http://vuejs.org) spinner requiring minimal configuration.
 
-## Documentation and demo
+## Documentation
 [http://dzwillia.github.io/vue-simple-spinner/](http://dzwillia.github.io/vue-simple-spinner/)
+
+## Demo
+
+[https://dzwillia.github.io/vue-simple-spinner/examples](https://dzwillia.github.io/vue-simple-spinner/examples)
 
 ## Requirements
 * [Vue.js](http://vuejs.org/) (^v2.1.4)
@@ -36,36 +40,6 @@ new Vue({
         Spinner
     }
 });
-```
-
-### Globals (script tag)
-
-Add a script tag pointing to `dist/vue-simple-spinner.js` *after* adding Vue.
-
-Example:
-
-```html
-<html>
-<head>
-    ...
-</head>
-<body>
-    <div id="app">
-        <vue-simple-spinner>Hello world!</vue-simple-spinner>
-    </div>
-
-    <script src="path/to/vue.js"></script>
-    <script src="path/to/vue-simple-spinner.js"></script>
-    <script>
-        new Vue({
-            el: '#app',
-            components: {
-                VueSimpleSpinner
-            }
-        });
-    </script>
-</body>
-</html>
 ```
 
 ## License
