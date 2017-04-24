@@ -89,7 +89,7 @@
           'border-top': this.line_size_px+'px solid '+this.lineFgColor,
           'width': this.size_px+'px',
           'height': this.size_px+'px',
-          'animation': 'spin '+this.speed+'s linear infinite'
+          'animation': 'vue-simple-spinner-spin '+this.speed+'s linear infinite'
         }
       },
       text_style() {
@@ -109,7 +109,7 @@
     transition: all 0.3s linear;
   }
 
-  @keyframes spin {
+  @keyframes vue-simple-spinner-spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
