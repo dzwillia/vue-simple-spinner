@@ -1,7 +1,7 @@
 <template>
   <div style="text-align: right">
-    <div :style="spinner_style"></div>
-    <div :style="text_style" v-if="message.length > 0">{{message}}</div>
+    <div class="vue-simple-spinner" :style="spinner_style"></div>
+    <div class="vue-simple-spinner" :style="text_style" v-if="message.length > 0">{{message}}</div>
   </div>
 </template>
 
@@ -105,6 +105,10 @@
 </script>
 
 <style>
+  .vue-simple-spinner {
+    transition: all 0.3s linear;
+  }
+
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }

@@ -141,8 +141,66 @@
           <div class="f6">With the power of the Vue.js virtual DOM, values can be updated without re-rendering the entire component.</div>
         </div>
         <div :class="box_cls" :style="box_style">
-          <div :class="label_cls">Spacing (55px)</div>
-          <spinner :size="changing_size" :message="changing_message"></spinner>
+          <div :class="label_cls">Values change every 4 seconds</div>
+          <spinner
+            :size="spinner_size"
+            :line-size="spinner_line_size"
+            :line-fg-color="spinner_line_fg_color"
+            :line-bg-color="spinner_line_bg_color"
+            :speed="spinner_speed"
+            :spacing="spinner_spacing"
+            :message="spinner_message"
+            :font-size="spinner_font_size"
+            :text-fg-color="spinner_text_fg_color"
+          ></spinner>
+          <div class="mv4" style="font-size: 12px">
+            <table class="collapse">
+              <thead>
+                <tr>
+                  <th class="tl bg-light-gray" :class="cell_cls">Property</th>
+                  <th class="tl bg-light-gray" :class="cell_cls">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td :class="cell_cls">Size:</td>
+                  <td :class="cell_cls">{{spinner_size}}px</td>
+                </tr>
+                <tr>
+                  <td :class="cell_cls">Line Size:</td>
+                  <td :class="cell_cls">{{spinner_line_size}}px</td>
+                </tr>
+                <tr>
+                  <td :class="cell_cls">Line Foreground Color:</td>
+                  <td :class="cell_cls">{{spinner_line_fg_color}}</td>
+                </tr>
+                <tr>
+                  <td :class="cell_cls">Line Background Color:</td>
+                  <td :class="cell_cls">{{spinner_line_bg_color}}</td>
+                </tr>
+                <tr>
+                  <td :class="cell_cls">Speed:</td>
+                  <td :class="cell_cls">{{spinner_speed}}s</td>
+                </tr>
+                <tr>
+                  <td :class="cell_cls">Spacing:</td>
+                  <td :class="cell_cls">{{spinner_spacing}}px</td>
+                </tr>
+                <tr>
+                  <td :class="cell_cls">Message:</td>
+                  <td :class="cell_cls">"{{spinner_message}}"</td>
+                </tr>
+                <tr>
+                  <td :class="cell_cls">Font Size:</td>
+                  <td :class="cell_cls">{{spinner_font_size}}px</td>
+                </tr>
+                <tr>
+                  <td :class="cell_cls">Text Foreground Color:</td>
+                  <td :class="cell_cls">{{spinner_text_fg_color}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
@@ -160,8 +218,14 @@
     },
     data() {
       return {
-        changing_size: 20,
-        changing_message: ''
+        spinner_line_fg_color: undefined,
+        spinner_line_bg_color: undefined,
+        spinner_size: 32,
+        spinner_line_size: 3,
+        spinner_speed: 0.6,
+        spinner_message: "I'll start changing in 4 seconds",
+        spinner_text_fg_color: undefined,
+        spinner_font_size: 13
       }
     },
     computed: {
@@ -178,15 +242,26 @@
         return 'min-height: 100px'
       },
       label_cls() {
-        return 'pb3 f6 fw6 dark-gray'
+        return 'pb4 f6 fw6 dark-gray'
+      },
+      cell_cls() {
+        return 'ph1 pv1 ba b--moon-gray'
       }
     },
     mounted() {
       var seconds = 0
       setInterval(() => {
-        this.changing_size = Math.ceil(Math.random() * 40) + 10
-        this.changing_message = "I've been running for "+(seconds++)+" seconds"
-      }, 1000)
+        this.spinner_line_fg_color = '#'+(Math.random()*0xFFFFFF<<0).toString(16)
+        this.spinner_line_bg_color = '#'+(Math.random()*0xFFFFFF<<0).toString(16)
+        this.spinner_size = Math.ceil(Math.random() * 100) + 10
+        this.spinner_line_size = Math.ceil(Math.random() * 20) + 2
+        this.spinner_speed = Math.round(Math.random() * 500)/100
+
+        this.spinner_spacing = Math.floor(Math.random() * 60)
+        this.spinner_message = "I've been running for "+(seconds+4)+" seconds"
+        this.spinner_text_fg_color = '#'+(Math.random()*0xFFFFFF<<0).toString(16)
+        this.spinner_font_size = Math.ceil(Math.random() * 30) + 10
+      }, 4000)
     }
   }
 </script>
