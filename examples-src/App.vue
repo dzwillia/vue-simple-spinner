@@ -8,70 +8,133 @@
         <a href="https://github.com/dzwillia/vue-simple-spinner" rel="noopener" target="_blank" title="View on Github"><svg xmlns="http://www.w3.org/2000/svg" fill="white" width="32" height="32" viewBox="0 0 16 16"><path d="M8 .198c-4.418 0-8 3.582-8 8 0 3.535 2.292 6.533 5.47 7.59.4.075.548-.173.548-.384 0-.19-.008-.82-.01-1.49-2.227.485-2.696-.943-2.696-.943-.364-.924-.888-1.17-.888-1.17-.726-.497.055-.486.055-.486.802.056 1.225.824 1.225.824.714 1.223 1.872.87 2.328.665.072-.517.28-.87.508-1.07-1.776-.202-3.644-.888-3.644-3.954 0-.874.313-1.588.824-2.148-.083-.202-.357-1.015.077-2.117 0 0 .672-.215 2.2.82.64-.177 1.323-.266 2.003-.27.68.004 1.365.093 2.004.27 1.527-1.035 2.198-.82 2.198-.82.435 1.102.162 1.916.08 2.117.512.56.822 1.274.822 2.147 0 3.072-1.872 3.748-3.653 3.946.288.248.544.735.544 1.48 0 1.07-.01 1.933-.01 2.196 0 .213.145.462.55.384 3.178-1.06 5.467-4.057 5.467-7.59 0-4.418-3.58-8-8-8z"></path></svg></a>
       </div>
     </div>
-    <div class="flex-fill flex flex-wrap overflow-y-auto">
-      <div :class="box_cls" :style="box_style">
-        <div :class="label_cls">Default spinner</div>
-        <spinner></spinner>
-      </div>
-      <div :class="box_cls" :style="box_style">
-        <div :class="label_cls">Default spinner with message</div>
-        <spinner message="Loading..."></spinner>
-      </div>
-      <div :class="box_cls" :style="box_style">
-        <div :class="label_cls">Tiny Spinner</div>
-        <spinner size="tiny" message="Loading..."></spinner>
-      </div>
-      <div :class="box_cls" :style="box_style">
-        <div :class="label_cls">Small Spinner</div>
-        <spinner size="small" message="Loading..."></spinner>
-      </div>
-      <div :class="box_cls" :style="box_style">
-        <div :class="label_cls">Medium Spinner</div>
-        <spinner size="medium" message="Loading..."></spinner>
-      </div>
-      <div :class="box_cls" :style="box_style">
-        <div :class="label_cls">Large Spinner</div>
-        <spinner size="large" message="Loading..."></spinner>
-      </div>
-      <div :class="box_cls" :style="box_style">
-        <div :class="label_cls">Big Spinner</div>
-        <spinner size="big" message="Loading..."></spinner>
-      </div>
-      <div :class="box_cls" :style="box_style">
-        <div :class="label_cls">Huge Spinner</div>
-        <spinner size="huge" message="Loading..."></spinner>
-      </div>
-      <div :class="box_cls" :style="box_style">
-        <div :class="label_cls">Massive Spinner</div>
-        <spinner size="massive" message="Loading..."></spinner>
-      </div>
-      <div :class="box_cls" :style="box_style">
-        <div :class="label_cls">Custom Colors (fg: #00ff00, bg: #555555)</div>
-        <spinner line-fg-color="#00ff00" line-bg-color="#555555"></spinner>
-      </div>
-      <div :class="box_cls" :style="box_style">
-        <div :class="label_cls">Custom Sizing (55px)</div>
-        <spinner size="55"></spinner>
-      </div>
-      <div :class="box_cls" :style="box_style">
-        <div :class="label_cls">Custom Line Sizing (7px)</div>
-        <spinner line-size="7"></spinner>
-      </div>
-      <div :class="box_cls" :style="box_style">
-        <div :class="label_cls">Custom Speed (2s)</div>
-        <spinner speed="2"></spinner>
-      </div>
-      <div :class="box_cls" :style="box_style">
-        <div :class="label_cls">Custom Spacing (55px)</div>
-        <spinner spacing="55" message="I'm 55px below the spinner"></spinner>
-      </div>
-      <div :class="box_cls" :style="box_style">
-        <div :class="label_cls">Custom Font Size (19px)</div>
-        <spinner font-size="19" message="I'm a 19px font size"></spinner>
-      </div>
-      <div :class="box_cls" :style="box_style">
-        <div :class="label_cls">Custom Font Color (#009900)</div>
-        <spinner text-fg-color="#009900" message="I'm #009900 green!"></spinner>
+    <div class="flex-fill overflow-y-auto">
+      <div class="center" style="max-width: 960px">
+        <div :class="header_cls">
+          <div class="pb2 f3">Default Spinners</div>
+          <div class="f6">Spinners can be used with either no or very little configuration.</div>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Default spinner</div>
+          <spinner></spinner>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Default spinner with message</div>
+          <spinner message="Loading..."></spinner>
+        </div>
+
+        <div :class="header_cls">
+          <div class="pb2 f3">Standard Sizes</div>
+          <div class="f6">Spinners come with some standard sizes which size both the spinner element as well as the message text.</div>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Tiny Spinner</div>
+          <spinner size="tiny" message="Loading..."></spinner>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Small Spinner</div>
+          <spinner size="small" message="Loading..."></spinner>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Medium Spinner</div>
+          <spinner size="medium" message="Loading..."></spinner>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Large Spinner</div>
+          <spinner size="large" message="Loading..."></spinner>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Big Spinner</div>
+          <spinner size="big" message="Loading..."></spinner>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Huge Spinner</div>
+          <spinner size="huge" message="Loading..."></spinner>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Massive Spinner</div>
+          <spinner size="massive" message="Loading..."></spinner>
+        </div>
+
+        <div :class="header_cls">
+          <div class="pb2 f3">Custom Sizes</div>
+          <div class="f6">Spinners can also have any arbitrary size (both overall size as well as line size).</div>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Custom Size (55px)</div>
+          <spinner size="55"></spinner>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Custom Size (88px)</div>
+          <spinner size="88"></spinner>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Custom Line Sizing (7px)</div>
+          <spinner line-size="7"></spinner>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Custom Line Sizing (12px)</div>
+          <spinner line-size="12"></spinner>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Both custom size and line size (55px and 7px respectively)</div>
+          <spinner size="55" line-size="7"></spinner>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Both custom size and line size (88px and 12px respectively)</div>
+          <spinner size="88" line-size="12"></spinner>
+        </div>
+
+        <div :class="header_cls">
+          <div class="pb2 f3">Custom Colors</div>
+          <div class="f6">Line foreground, line background and message text colors can all be changed.</div>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Line Foreground Color</div>
+          <spinner line-fg-color="#009900"></spinner>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Line Background Color</div>
+          <spinner line-bg-color="#555555"></spinner>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Line Foreground/Background Colors</div>
+          <spinner line-fg-color="#009900" line-bg-color="#555555"></spinner>
+        </div>
+
+        <div :class="header_cls">
+          <div class="pb2 f3">Custom Speeds</div>
+          <div class="f6">The speed of the spinner can be changed to any arbitrary speed.</div>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Fast (0.4s)</div>
+          <spinner speed="0.4"></spinner>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Slow (2s)</div>
+          <spinner speed="2"></spinner>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Really Slow (6s)</div>
+          <spinner speed="6"></spinner>
+        </div>
+
+        <div :class="header_cls">
+          <div class="pb2 f3">Custom Messages</div>
+          <div class="f6">The spacing, font size and color of the message can be changed.</div>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Spacing (55px)</div>
+          <spinner spacing="55" message="I'm 55px below the spinner"></spinner>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Font Size (20px)</div>
+          <spinner font-size="20" message="I'm a 20px font size"></spinner>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Font Color (#009900)</div>
+          <spinner text-fg-color="#009900" message="I'm #009900 green!"></spinner>
+        </div>
       </div>
     </div>
   </div>
@@ -90,14 +153,17 @@
       version() {
         return version
       },
+      header_cls() {
+        return 'mt5 pb4 bb b--black-10'
+      },
       box_cls() {
-        return 'flex flex-column relative pa4 w-25 justify-center br bb b--moon-gray'
+        return 'db pt3 pb4 relative center bb b--black-10'
       },
       box_style() {
-        return 'min-height: 200px'
+        return 'min-height: 100px'
       },
       label_cls() {
-        return 'absolute top-0 left-0 pa2 f6 fw6 ttu dark-gray'
+        return 'pb3 f6 fw6 dark-gray'
       }
     }
   }
