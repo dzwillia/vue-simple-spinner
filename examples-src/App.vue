@@ -62,27 +62,27 @@
         </div>
         <div :class="box_cls" :style="box_style">
           <div :class="label_cls">Custom Size (55px)</div>
-          <spinner size="55"></spinner>
+          <spinner :size="55"></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
           <div :class="label_cls">Custom Size (88px)</div>
-          <spinner size="88"></spinner>
+          <spinner :size="88"></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
           <div :class="label_cls">Custom Line Sizing (7px)</div>
-          <spinner line-size="7"></spinner>
+          <spinner :line-size="7"></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
           <div :class="label_cls">Custom Line Sizing (12px)</div>
-          <spinner line-size="12"></spinner>
+          <spinner :line-size="12"></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
           <div :class="label_cls">Both custom size and line size (55px and 7px respectively)</div>
-          <spinner size="55" line-size="7"></spinner>
+          <spinner :size="55" :line-size="7"></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
           <div :class="label_cls">Both custom size and line size (88px and 12px respectively)</div>
-          <spinner size="88" line-size="12"></spinner>
+          <spinner :size="88" :line-size="12"></spinner>
         </div>
 
         <div :class="header_cls">
@@ -108,15 +108,15 @@
         </div>
         <div :class="box_cls" :style="box_style">
           <div :class="label_cls">Fast (0.4s)</div>
-          <spinner speed="0.4"></spinner>
+          <spinner :speed="0.4"></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
           <div :class="label_cls">Slow (2s)</div>
-          <spinner speed="2"></spinner>
+          <spinner :speed="2"></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
           <div :class="label_cls">Really Slow (6s)</div>
-          <spinner speed="6"></spinner>
+          <spinner :speed="6"></spinner>
         </div>
 
         <div :class="header_cls">
@@ -125,11 +125,11 @@
         </div>
         <div :class="box_cls" :style="box_style">
           <div :class="label_cls">Spacing (55px)</div>
-          <spinner spacing="55" message="I'm 55px below the spinner"></spinner>
+          <spinner :spacing="55" message="I'm 55px below the spinner"></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
           <div :class="label_cls">Font Size (20px)</div>
-          <spinner font-size="20" message="I'm a 20px font size"></spinner>
+          <spinner :font-size="20" message="I'm a 20px font size"></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
           <div :class="label_cls">Font Color (#009900)</div>

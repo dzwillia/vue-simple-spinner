@@ -19,6 +19,7 @@
         default: 32
       },
       'line-size': {
+        type: Number,
         default: 3
       },
       'line-bg-color': {
@@ -30,15 +31,19 @@
         default: '#2196f3' // match .blue color to Material Design's 'Blue 500' color
       },
       'speed': {
+        type: Number,
         default: 0.8
       },
       'spacing': {
+        type: Number,
         default: 4
       },
       'message': {
+        type: String,
         default: ''
       },
       'font-size': {
+        type: Number,
         default: 13
       },
       'text-fg-color': {
