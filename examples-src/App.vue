@@ -135,6 +135,15 @@
           <div :class="label_cls">Font Color (#009900)</div>
           <spinner text-fg-color="#009900" message="I'm #009900 green!"></spinner>
         </div>
+
+        <div :class="header_cls">
+          <div class="pb2 f3">Full Powers of Vue.js</div>
+          <div class="f6">With the power of the Vue.js virtual DOM, values can be updated without re-rendering the entire component.</div>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Spacing (55px)</div>
+          <spinner :size="changing_size" :message="changing_message"></spinner>
+        </div>
       </div>
     </div>
   </div>
@@ -148,6 +157,12 @@
     name: 'app',
     components: {
       Spinner
+    },
+    data() {
+      return {
+        changing_size: 20,
+        changing_message: ''
+      }
     },
     computed: {
       version() {
@@ -165,6 +180,13 @@
       label_cls() {
         return 'pb3 f6 fw6 dark-gray'
       }
+    },
+    mounted() {
+      var seconds = 0
+      setInterval(() => {
+        this.changing_size = Math.ceil(Math.random() * 40) + 10
+        this.changing_message = "I've been running for "+(seconds++)+" seconds"
+      }, 1000)
     }
   }
 </script>
