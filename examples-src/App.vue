@@ -236,13 +236,13 @@
         return 'mt5 pb4 bb b--black-10'
       },
       box_cls() {
-        return 'db pt3 pb4 relative center bb b--black-10'
+        return 'db pt2 pb4 relative center bb b--black-10'
       },
       box_style() {
         return 'min-height: 100px'
       },
       label_cls() {
-        return 'pb4 f6 fw6 dark-gray'
+        return 'mb4 f6 fw6 dark-gray'
       },
       cell_cls() {
         return 'ph1 pv1 ba b--moon-gray'
@@ -250,15 +250,18 @@
     },
     mounted() {
       var seconds = 0
+
       setInterval(() => {
+        seconds += 4
+
         this.spinner_line_fg_color = '#'+(Math.random()*0xFFFFFF<<0).toString(16)
         this.spinner_line_bg_color = '#'+(Math.random()*0xFFFFFF<<0).toString(16)
         this.spinner_size = Math.ceil(Math.random() * 100) + 10
-        this.spinner_line_size = Math.ceil(Math.random() * 20) + 2
-        this.spinner_speed = Math.round(Math.random() * 500)/100
+        this.spinner_line_size = Math.ceil(Math.random() * 20) + 1
+        this.spinner_speed = Math.round(Math.random() * 1000)/100
 
         this.spinner_spacing = Math.floor(Math.random() * 60)
-        this.spinner_message = "I've been running for "+(seconds+4)+" seconds"
+        this.spinner_message = "I've been running for "+seconds+" seconds"
         this.spinner_text_fg_color = '#'+(Math.random()*0xFFFFFF<<0).toString(16)
         this.spinner_font_size = Math.ceil(Math.random() * 30) + 10
       }, 4000)
