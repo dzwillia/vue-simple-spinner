@@ -4,7 +4,7 @@
 vue-simple-spinner is designed to be a lightweight [Vue.js](http://vuejs.org) spinner requiring minimal configuration.
 
 ## Documentation
-[http://dzwillia.github.io/vue-simple-spinner/](http://dzwillia.github.io/vue-simple-spinner/)
+[https://github.com/dzwillia/vue-simple-spinner/](https://github.com/dzwillia/vue-simple-spinner/)
 
 ## Demo
 
@@ -14,7 +14,7 @@ vue-simple-spinner is designed to be a lightweight [Vue.js](http://vuejs.org) sp
 * [Vue.js](http://vuejs.org/) (^v2.1.4)
 
 ## Browser support
-All ([http://caniuse.com/#search=css-animation](http://caniuse.com/#search=css-animation)
+IE 10+ (due to [CSS animation support](https://caniuse.com/#feat=css-animation)).
 
 ## Installation
 
