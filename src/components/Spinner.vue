@@ -81,10 +81,34 @@
         return isNumber(this.lineSize) ? this.lineSize : 4
       },
       text_margin_top() {
-        return isNumber(this.spacing) ? this.spacing : Math.min(Math.max(Math.ceil(this.size_px/8), 3), 12)
+        switch (this.size)
+        {
+          case 'tiny':
+          case 'small':
+          case 'medium':
+          case 'large':
+          case 'big':
+          case 'huge':
+          case 'massive':
+            return Math.min(Math.max(Math.ceil(this.size_px/8), 3), 12)
+        }
+
+        return isNumber(this.spacing) ? this.spacing : 4
       },
       text_font_size() {
-        return isNumber(this.fontSize) ? this.fontSize : Math.min(Math.max(Math.ceil(this.size_px*0.4), 11), 32)
+        switch (this.size)
+        {
+          case 'tiny':
+          case 'small':
+          case 'medium':
+          case 'large':
+          case 'big':
+          case 'huge':
+          case 'massive':
+            return Math.min(Math.max(Math.ceil(this.size_px*0.4), 11), 32)
+        }
+
+        return isNumber(this.fontSize) ? this.fontSize : 13
       },
       spinner_style() {
         return {
