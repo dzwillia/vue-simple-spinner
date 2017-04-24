@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="flex-fill overflow-y-auto">
-      <div class="center" style="max-width: 960px">
+      <div class="mb5 center" style="max-width: 960px">
         <div :class="header_cls">
           <div class="pb2 f3">Default Spinners</div>
           <div class="f6">Spinners can be used with either no or very little configuration.</div>
@@ -141,7 +141,61 @@
           <div class="f6">With the power of the Vue.js virtual DOM, values can be updated without re-rendering the entire component.</div>
         </div>
         <div :class="box_cls" :style="box_style">
-          <div :class="label_cls">Values change every 4 seconds</div>
+          <div :class="label_cls">
+            <span>Values change every 4 seconds</span>
+            <button type="button" class="db mv2 pv2 ph3 bn br1 white bg-blue darken-10" @click="is_paused = !is_paused">
+              <span v-if="is_paused">Start Changing Values</span>
+              <span v-else>Stop Changing Values</span>
+            </button>
+            <div class="mb4" style="font-size: 12px">
+              <table class="collapse">
+                <thead>
+                  <tr>
+                    <th class="tl bg-light-gray" :class="cell_cls">Property</th>
+                    <th class="tl bg-light-gray" :class="cell_cls">Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td :class="cell_cls">Size:</td>
+                    <td :class="cell_cls">{{spinner_size}}px</td>
+                  </tr>
+                  <tr>
+                    <td :class="cell_cls">Line Size:</td>
+                    <td :class="cell_cls">{{spinner_line_size}}px</td>
+                  </tr>
+                  <tr>
+                    <td :class="cell_cls">Line Foreground Color:</td>
+                    <td :class="cell_cls">{{spinner_line_fg_color}}</td>
+                  </tr>
+                  <tr>
+                    <td :class="cell_cls">Line Background Color:</td>
+                    <td :class="cell_cls">{{spinner_line_bg_color}}</td>
+                  </tr>
+                  <tr>
+                    <td :class="cell_cls">Speed:</td>
+                    <td :class="cell_cls">{{spinner_speed}}s</td>
+                  </tr>
+                  <tr>
+                    <td :class="cell_cls">Spacing:</td>
+                    <td :class="cell_cls">{{spinner_spacing}}px</td>
+                  </tr>
+                  <tr>
+                    <td :class="cell_cls">Message:</td>
+                    <td :class="cell_cls">"{{spinner_message}}"</td>
+                  </tr>
+                  <tr>
+                    <td :class="cell_cls">Font Size:</td>
+                    <td :class="cell_cls">{{spinner_font_size}}px</td>
+                  </tr>
+                  <tr>
+                    <td :class="cell_cls">Text Foreground Color:</td>
+                    <td :class="cell_cls">{{spinner_text_fg_color}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
           <spinner
             :size="spinner_size"
             :line-size="spinner_line_size"
@@ -153,54 +207,6 @@
             :font-size="spinner_font_size"
             :text-fg-color="spinner_text_fg_color"
           ></spinner>
-          <div class="mv4" style="font-size: 12px">
-            <table class="collapse">
-              <thead>
-                <tr>
-                  <th class="tl bg-light-gray" :class="cell_cls">Property</th>
-                  <th class="tl bg-light-gray" :class="cell_cls">Value</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td :class="cell_cls">Size:</td>
-                  <td :class="cell_cls">{{spinner_size}}px</td>
-                </tr>
-                <tr>
-                  <td :class="cell_cls">Line Size:</td>
-                  <td :class="cell_cls">{{spinner_line_size}}px</td>
-                </tr>
-                <tr>
-                  <td :class="cell_cls">Line Foreground Color:</td>
-                  <td :class="cell_cls">{{spinner_line_fg_color}}</td>
-                </tr>
-                <tr>
-                  <td :class="cell_cls">Line Background Color:</td>
-                  <td :class="cell_cls">{{spinner_line_bg_color}}</td>
-                </tr>
-                <tr>
-                  <td :class="cell_cls">Speed:</td>
-                  <td :class="cell_cls">{{spinner_speed}}s</td>
-                </tr>
-                <tr>
-                  <td :class="cell_cls">Spacing:</td>
-                  <td :class="cell_cls">{{spinner_spacing}}px</td>
-                </tr>
-                <tr>
-                  <td :class="cell_cls">Message:</td>
-                  <td :class="cell_cls">"{{spinner_message}}"</td>
-                </tr>
-                <tr>
-                  <td :class="cell_cls">Font Size:</td>
-                  <td :class="cell_cls">{{spinner_font_size}}px</td>
-                </tr>
-                <tr>
-                  <td :class="cell_cls">Text Foreground Color:</td>
-                  <td :class="cell_cls">{{spinner_text_fg_color}}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
         </div>
       </div>
     </div>
@@ -218,11 +224,13 @@
     },
     data() {
       return {
+        is_paused: false,
         spinner_line_fg_color: undefined,
         spinner_line_bg_color: undefined,
         spinner_size: 32,
         spinner_line_size: 3,
         spinner_speed: 0.6,
+        spinner_spacing: 4,
         spinner_message: "I'll start changing in 4 seconds",
         spinner_text_fg_color: undefined,
         spinner_font_size: 13
@@ -252,6 +260,9 @@
       var seconds = 0
 
       setInterval(() => {
+        if (this.is_paused)
+          return
+
         seconds += 4
 
         this.spinner_line_fg_color = '#'+(Math.random()*0xFFFFFF<<0).toString(16)
@@ -293,5 +304,14 @@
     flex: 1 1;
     min-width: 0; /* 1 */
     min-height: 0; /* 1 */
+  }
+
+  .darken-10:hover,
+  .darken-10:focus {
+    box-shadow: inset 9999px 9999px rgba(0,0,0,0.10)
+  }
+
+  .darken-10:active {
+    box-shadow: inset 9999px 9999px rgba(0,0,0,0.20)
   }
 </style>
