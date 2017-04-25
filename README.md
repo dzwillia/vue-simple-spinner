@@ -63,7 +63,7 @@ Example:
   <script>
     new Vue({
       el: '#app'
-    });
+    })
   </script>
 </body>
 </html>
