@@ -1,16 +1,15 @@
 {
   "name": "vue-simple-spinner",
-  "version": "1.1.8",
+  "version": "1.2.0",
   "description": "A simple, flexible spinner for Vue.js",
   "author": "David Z. Williams <dave@flex.io>",
   "main": "dist/vue-simple-spinner.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.dev.js --open --inline --hot",
     "build": "webpack --config build/webpack.dist.js",
-    "build:docs": "webpack --config build/webpack.docs.js",
     "build:examples": "webpack --config build/webpack.examples.js",
-    "build:all": "npm run build && npm run build:docs && npm run build:examples",
-    "clean": "rimraf ./docs/docs.bundle.css ./docs/docs.bundle.js ./examples/examples.bundle.css ./examples/examples.bundle.js"
+    "build:all": "npm run build && npm run build:examples",
+    "clean": "rimraf ./examples/examples.bundle.css ./examples/examples.bundle.js"
   },
   "repository": {
     "type": "git",
