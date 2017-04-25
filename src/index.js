@@ -1,5 +1,5 @@
 import Spinner from './components/Spinner.vue'
 
-export default Spinner
+export default VueSimpleSpinner
 
-export { Spinner }
+export { VueSimpleSpinner }
