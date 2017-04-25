@@ -69,11 +69,11 @@
           <spinner :size="88"></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
-          <div :class="label_cls">Custom line sizing (7px)</div>
+          <div :class="label_cls">Custom line size (7px)</div>
           <spinner :line-size="7"></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
-          <div :class="label_cls">Custom line sizing (12px)</div>
+          <div :class="label_cls">Custom line size (12px)</div>
           <spinner :line-size="12"></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
