@@ -143,11 +143,7 @@
         <div :class="box_cls" :style="box_style">
           <div :class="label_cls">
             <span>Values change every 4 seconds</span>
-            <button type="button" class="db mv2 pv2 ph3 bn br1 white bg-blue darken-10" @click="is_paused = !is_paused">
-              <span v-if="is_paused">Start Changing Values Again</span>
-              <span v-else>Keep Existing Values</span>
-            </button>
-            <div class="mb4" style="font-size: 12px">
+            <div class="mv2" style="font-size: 12px">
               <table class="collapse">
                 <thead>
                   <tr>
@@ -194,6 +190,12 @@
                   </tr>
                 </tbody>
               </table>
+            </div>
+            <div class="mt2 mb4">
+              <button type="button" class="pv2 ph3 bn br1 white bg-blue darken-10" @click="is_paused = !is_paused">
+                <span v-if="is_paused">Start</span>
+                <span v-else>Pause</span>
+              </button>
             </div>
           </div>
           <spinner
