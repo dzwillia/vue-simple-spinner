@@ -28,31 +28,31 @@
           <div class="f6">Spinners come with some standard sizes which size both the spinner element as well as the message text.</div>
         </div>
         <div :class="box_cls" :style="box_style">
-          <div :class="label_cls">Tiny Spinner</div>
+          <div :class="label_cls">Tiny spinner</div>
           <spinner size="tiny" message="Loading..."></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
-          <div :class="label_cls">Small Spinner</div>
+          <div :class="label_cls">Small spinner</div>
           <spinner size="small" message="Loading..."></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
-          <div :class="label_cls">Medium Spinner</div>
+          <div :class="label_cls">Medium spinner</div>
           <spinner size="medium" message="Loading..."></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
-          <div :class="label_cls">Large Spinner</div>
+          <div :class="label_cls">Large spinner</div>
           <spinner size="large" message="Loading..."></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
-          <div :class="label_cls">Big Spinner</div>
+          <div :class="label_cls">Big spinner</div>
           <spinner size="big" message="Loading..."></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
-          <div :class="label_cls">Huge Spinner</div>
+          <div :class="label_cls">Huge spinner</div>
           <spinner size="huge" message="Loading..."></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
-          <div :class="label_cls">Massive Spinner</div>
+          <div :class="label_cls">Massive spinner</div>
           <spinner size="massive" message="Loading..."></spinner>
         </div>
 
@@ -61,19 +61,19 @@
           <div class="f6">Spinners can also have any arbitrary size (both overall size as well as line size).</div>
         </div>
         <div :class="box_cls" :style="box_style">
-          <div :class="label_cls">Custom Size (55px)</div>
+          <div :class="label_cls">Custom size (55px)</div>
           <spinner :size="55"></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
-          <div :class="label_cls">Custom Size (88px)</div>
+          <div :class="label_cls">Custom size (88px)</div>
           <spinner :size="88"></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
-          <div :class="label_cls">Custom Line Sizing (7px)</div>
+          <div :class="label_cls">Custom line sizing (7px)</div>
           <spinner :line-size="7"></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
-          <div :class="label_cls">Custom Line Sizing (12px)</div>
+          <div :class="label_cls">Custom line sizing (12px)</div>
           <spinner :line-size="12"></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
@@ -90,15 +90,15 @@
           <div class="f6">Line foreground, line background and message text colors can all be changed.</div>
         </div>
         <div :class="box_cls" :style="box_style">
-          <div :class="label_cls">Line Foreground Color</div>
+          <div :class="label_cls">Line foreground color</div>
           <spinner line-fg-color="#009900"></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
-          <div :class="label_cls">Line Background Color</div>
+          <div :class="label_cls">Line background color</div>
           <spinner line-bg-color="#555555"></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
-          <div :class="label_cls">Line Foreground/Background Colors</div>
+          <div :class="label_cls">Line foreground and background colors</div>
           <spinner line-fg-color="#009900" line-bg-color="#555555"></spinner>
         </div>
 
@@ -115,7 +115,7 @@
           <spinner :speed="2"></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
-          <div :class="label_cls">Really Slow (6s)</div>
+          <div :class="label_cls">Very slow (6s)</div>
           <spinner :speed="6"></spinner>
         </div>
 
@@ -128,17 +128,17 @@
           <spinner :spacing="55" message="I'm 55px below the spinner"></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
-          <div :class="label_cls">Font Size (20px)</div>
+          <div :class="label_cls">Font size (20px)</div>
           <spinner :font-size="20" message="I'm a 20px font size"></spinner>
         </div>
         <div :class="box_cls" :style="box_style">
-          <div :class="label_cls">Font Color (#009900)</div>
+          <div :class="label_cls">Font color (#009900)</div>
           <spinner text-fg-color="#009900" message="I'm #009900 green!"></spinner>
         </div>
 
         <div :class="header_cls">
-          <div class="pb2 f3">Full Powers of Vue.js</div>
-          <div class="f6">With the power of the Vue.js virtual DOM, values can be updated without re-rendering the entire component.</div>
+          <div class="pb2 f3">Full Power of Vue.js</div>
+          <div class="f6">With the power of the Vue.js virtual DOM, properties can be updated without needing to re-render the entire component.</div>
         </div>
         <div :class="box_cls" :style="box_style">
           <div :class="label_cls">
@@ -241,10 +241,10 @@
         return version
       },
       header_cls() {
-        return 'mt5 pb4 bb b--black-10'
+        return 'mt5 pb2 bb bw1 b--black-10'
       },
       box_cls() {
-        return 'db pt2 pb4 relative center bb b--black-10'
+        return 'db pt2 pb5 relative center css-box'
       },
       box_style() {
         return 'min-height: 100px'
@@ -313,5 +313,9 @@
 
   .darken-10:active {
     box-shadow: inset 9999px 9999px rgba(0,0,0,0.20)
+  }
+
+  .css-box + .css-box {
+    border-top: 1px solid rgba(0,0,0,0.1)
   }
 </style>
