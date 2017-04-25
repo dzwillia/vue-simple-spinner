@@ -144,8 +144,8 @@
           <div :class="label_cls">
             <span>Values change every 4 seconds</span>
             <button type="button" class="db mv2 pv2 ph3 bn br1 white bg-blue darken-10" @click="is_paused = !is_paused">
-              <span v-if="is_paused">Start Changing Values</span>
-              <span v-else>Stop Changing Values</span>
+              <span v-if="is_paused">Start Changing Values Again</span>
+              <span v-else>Keep Existing Values</span>
             </button>
             <div class="mb4" style="font-size: 12px">
               <table class="collapse">
