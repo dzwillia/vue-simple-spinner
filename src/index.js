@@ -5,6 +5,6 @@ if (typeof window !== 'undefined' && window.Vue) {
   Vue.component('vue-simple-spinner', VueSimpleSpinner)
 }
 
-export default VueSimpleSpinner
-
 export { VueSimpleSpinner }
+
+export default VueSimpleSpinner
