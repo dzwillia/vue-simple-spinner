@@ -32,14 +32,41 @@ npm install vue-simple-spinner --save
 *The following examples can also be used with CommonJS by replacing ES6-specific syntax with CommonJS equivalents.*
 
 ```js
-import Vue from 'vue';
-import Spinner from 'vue-simple-spinner';
+import Vue from 'vue'
+import Spinner from 'vue-simple-spinner'
 
 new Vue({
-    components: {
-        Spinner
-    }
-});
+  components: {
+    Spinner
+  }
+})
+```
+
+### Globals (script tag)
+
+Add a script tag pointing to `dist/vue-simple-spinner.min.js` *after* adding Vue.
+
+Example:
+
+```html
+<html>
+<head>
+  ...
+</head>
+<body>
+  <div id="app">
+    <vue-simple-spinner></vue-simple-spinner>
+  </div>
+
+  <script src="path/to/vue.js"></script>
+  <script src="path/to/vue-simple-spinner.js"></script>
+  <script>
+    new Vue({
+      el: '#app'
+    });
+  </script>
+</body>
+</html>
 ```
 
 ## License
