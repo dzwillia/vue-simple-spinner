@@ -1,6 +1,6 @@
 <template>
-  <div style="text-align: right">
-    <div class="vue-simple-spinner" :style="spinner_style"></div>
+  <div name="root-spinner">
+    <div class="vue-simple-spinner" :style="spinner_style" name="spinner"></div>
     <div class="vue-simple-spinner" :style="text_style" v-if="message.length > 0">{{message}}</div>
   </div>
 </template>
@@ -16,7 +16,7 @@
       'size': {
         // either a number (pixel width/height) or 'tiny', 'small',
         // 'medium', 'large', 'huge', 'massive' for common sizes
-        default: 32
+        default: 32 /* modificado */
       },
       'line-size': {
         type: Number,
@@ -49,6 +49,10 @@
       'text-fg-color': {
         type: String,
         default: '#555'
+      },
+      'inside-parent': {
+        type: Boolean,
+        default: false
       }
     },
     computed: {
@@ -128,7 +132,33 @@
           'font-size': this.text_font_size+'px',
           'text-align': 'center'
         }
+      },
+    },
+    watch: {
+      insideParent() {
+        this.toggleInsideParent(this.insideParent)
       }
+    },
+    methods: {
+      toggleInsideParent(renderInsideParent) {
+        let spinnerElement = document.getElementsByName("spinner")[0]
+        let rootSpinnerElement = document.getElementsByName("root-spinner")[0]
+        let spinnerParent = rootSpinnerElement.parentNode
+        console.log(spinnerParent)
+        if(renderInsideParent) {
+          spinnerElement.classList.add('inner-spinner')
+          rootSpinnerElement.classList.add('root-spinner')
+          spinnerParent.classList.add('spinner-parent')
+        }
+        else {
+          spinnerElement.classList.remove('inner-spinner')
+          rootSpinnerElement.classList.remove('root-spinner')
+          spinnerParent.classList.remove('spinner-parent')
+        }
+      }
+    },
+    mounted() {
+      this.toggleInsideParent(this.insideParent)
     }
   }
 </script>
@@ -136,6 +166,25 @@
 <style>
   .vue-simple-spinner {
     transition: all 0.3s linear;
+  }
+
+  .inner-spinner {
+    position: absolute;
+    left:0; right:0;
+    top:0; bottom:0;
+    margin: auto !important;
+  }
+
+  .root-spinner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background-color: rgba(220, 220, 220, 0.5);
+  }
+
+  .spinner-parent {
+    position: relative;
   }
 
   @keyframes vue-simple-spinner-spin {
