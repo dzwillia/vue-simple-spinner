@@ -1,74 +1,79 @@
-# vue-grid
-> A flexible grid component for Vue.js
+# vue-simple-spinner
+> A simple, flexible spinner for Vue.js
 
-**NOTE: We've moved on NPM! The latest version of vue-grid is now located at [vue-grid2](https://www.npmjs.com/package/vue-grid2).**
- 
-vue-grid is designed to be an advanced [Vue.js](http://vuejs.org) grid component allowing for fast loading and rendering of tabular data.
+vue-simple-spinner is designed to be a lightweight [Vue.js](http://vuejs.org) spinner requiring minimal configuration.
 
 ## Documentation
-[https://github.com/dzwillia/vue-grid/](https://github.com/dzwillia/vue-grid/)
+[https://github.com/dzwillia/vue-simple-spinner/](https://github.com/dzwillia/vue-simple-spinner/)
 
 ## Demo
 
-[https://dzwillia.github.io/vue-grid](https://dzwillia.github.io/vue-grid)
+[https://dzwillia.github.io/vue-simple-spinner/examples](https://dzwillia.github.io/vue-simple-spinner/examples)
 
 ## Requirements
 * [Vue.js](http://vuejs.org/) (^v2.1.4)
 
 ## Browser support
-IE 10+ (due to [Flexbox support](https://caniuse.com/#feat=flexbox)).
+IE 10+ (due to [CSS animation support](https://caniuse.com/#feat=css-animation)).
 
 ## Installation
 
 ### NPM
 
 ```bash
-npm install vue2-grid --save
+npm install vue-simple-spinner --save
 ```
 
-### Usage
+## Usage
+> All styling for this component is done via computed styles in the `Spinner.vue` component and requires no external CSS files.
 
 ### ES6
 
+*The following examples can also be used with CommonJS by replacing ES6-specific syntax with CommonJS equivalents.*
+
 ```js
-<grid
-  data-url="https://enter-your-data/url/endpoint/here"
-></grid>
+import Vue from 'vue'
+import Spinner from 'vue-simple-spinner'
+
+new Vue({
+  components: {
+    Spinner
+  }
+})
 ```
 
-Please note that for now he JSON payload must be formatted as follows:
+### Globals (script tag)
 
-```json
-{
-  "columns": [
-    { "name": "col1" },
-    { "name": "col2" },
-    { "name": "col3" }
-  ],
-  "rows": [
-    {
-      "col1": "Column 1 Row 1",
-      "col2": "Column 2 Row 1",
-      "col3": "Column 3 Row 1"
-    },{
-      "col1": "Column 1 Row 2",
-      "col2": "Column 2 Row 2",
-      "col3": "Column 3 Row 2"
-    },{
-      "col1": "Column 1 Row 3",
-      "col2": "Column 2 Row 3",
-      "col3": "Column 3 Row 3"
-    }
-  ],
-  "total_count": 1000
-}
+Add a script tag pointing to `dist/vue-simple-spinner.min.js` *after* adding Vue.
+
+Example:
+
+```html
+<html>
+<head>
+  ...
+</head>
+<body>
+  <div id="app">
+    <vue-simple-spinner></vue-simple-spinner>
+  </div>
+
+  <script src="path/to/vue.js"></script>
+  <script src="path/to/vue-simple-spinner.js"></script>
+  <script>
+    new Vue({
+      el: '#app'
+    })
+  </script>
+</body>
+</html>
 ```
-
-The columns node only needs to be provided on the first call.
 
 ## License
-vue-grid is open source and released under the [MIT License](LICENSE).
+vue-simple-spinner is open source and released under the [MIT License](LICENSE).
 
 Copyright (c) 2017 [David Z Williams](https://twitter.com/padredaveo).
 
-> *PS: I would love to know if you're using vue-grid. Tweet to me at [@padredaveo](https://twitter.com/padredaveo)*.
+> *PS: I would love to know if you're using vue-simple-spinner. Tweet to me at [@padredaveo](https://twitter.com/padredaveo)*.
+
+
