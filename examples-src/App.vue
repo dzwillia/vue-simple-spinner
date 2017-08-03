@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="fixed absolute absolute--fill flex flex-column">
+  <div id="app" class="fixed absolute--fill flex flex-column">
     <div class="flex-none flex flex-row items-center pv3 ph4 bg-blue white">
       <div class="flex-fill">
         <a :href="'https://github.com/dzwillia/vue-simple-spinner/releases/tag/v'+version" class="white no-underline underline-hover">vue-simple-spinner {{version}}</a>
@@ -289,7 +289,7 @@
   }
 
   html {
-    height:100%;
+    height: 100%;
   }
 
   body {
