@@ -40,15 +40,14 @@ config.module.rules[0].options.loaders = {
 }
 */
 
-const distLoaderOptionsPluginConfig = new webpack.LoaderOptionsPlugin({
-  minimize: true
-});
+config.plugins = config.plugins.concat([
+  new webpack.LoaderOptionsPlugin({
+    minimize: true
+  })
+])
 
 if (options.isProduction) {
   config.plugins = config.plugins.concat([
-
-    distLoaderOptionsPluginConfig,
-
     // Set the production environment
     new webpack.DefinePlugin({
       'process.env': {
@@ -62,12 +61,6 @@ if (options.isProduction) {
         warnings: false
       }
     })
-  ])
-}
-else {
-
-  config.plugins = config.plugins.concat([
-    distLoaderOptionsPluginConfig,
   ])
 }
 
