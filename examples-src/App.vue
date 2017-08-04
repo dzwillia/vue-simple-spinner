@@ -9,7 +9,8 @@
       </div>
     </div>
     <div class="flex-fill" style="padding-bottom: 160px">
-      <div class="mb5 center" style="max-width: 960px">
+      <!-- allow a 3rem padding when resizing browser horizontally and approaching Tachyon's large media breakpoint (60em) -->
+      <div class="mb5 center" style="max-width: 57rem">
 
         <div class="pt5 nb5" id="default-spinners">
           <a href="#default-spinners" :class="header_cls">
@@ -259,10 +260,10 @@
         return version
       },
       header_cls() {
-        return 'db mt5 pa3 ba b--mid-gray bg-mid-gray white br--top br2 no-underline'
+        return 'db mt5 pv3 ph3 ph0-l bb b--mid-gray b--black-10 br--top br2 mid-gray hover-blue no-underline'
       },
       box_cls() {
-        return 'db ph3 pt3 pb4 bl br bb b--black-10 relative center css-box'
+        return 'db ph3 pt3 pb4 bl-l br-l bb b--black-10 relative center css-box'
       },
       box_style() {
         return 'min-height: 100px'
@@ -334,11 +335,5 @@
 
   .lh-1 {
     line-height: 1;
-  }
-
-  .css-box:last-child {
-    border-radius: 0.25rem;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
   }
 </style>
