@@ -16,7 +16,7 @@
       'size': {
         // either a number (pixel width/height) or 'tiny', 'small',
         // 'medium', 'large', 'huge', 'massive' for common sizes
-        default: 32 /* modificado */
+        default: 32
       },
       'line-size': {
         type: Number,
@@ -156,7 +156,7 @@
           'font-size': this.text_font_size+'px',
           'text-align': 'center'
         }
-      },
+      }
     }
   }
 </script>

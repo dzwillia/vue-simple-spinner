@@ -182,27 +182,32 @@
           <form style="position: relative; width: 90%; margin: auto">
             <h4>A Form</h4>
             <ul>
+              <li>
+                <label>Label 1</label>
+                <input type="text" />
+              </li>
+              <li>
+                <label>Label 2</label>
+                <input type="text" />
+              </li>
+              <br><br>
+              <li>
+                <label>Label 3</label>
+                <input type="text" />
+              </li>
+              <li>
+                <label>Label 4</label>
+                <input type="text" />
+              </li>
+              <br><br>
+              <h5>Generate Random Text</h5>
               <div style="position: relative">
-                <spinner :inside-parent="true"></spinner>
-                <li>
-                  <label>Label 1</label>
-                  <input type="text" />
-                </li>
-                <li>
-                  <label>Label 2</label>
-                  <input type="text" />
-                </li>
-                <br><br>
-                <li>
-                  <label>Label 3</label>
-                  <input type="text" />
-                </li>
-                <li>
-                  <label>Label 4</label>
-                  <input type="text" />
-                </li>
-                <br><br>
-                <button>Request Data</button>
+                <spinner :inside-parent="true" v-show="show_spinner"></spinner>
+                
+                <div style="border: 1px solid rgba(0, 0, 0, 0.1); width:100%; height: 250px" v-html="custom_paragraphs"></div>
+                
+                <br>
+                <button type="button" @click="fillCustomParagraphs()">Request Data</button>
               </div>
               <br>
               <li>
@@ -214,7 +219,7 @@
                 <input type="text" />
               </li>
             </ul>
-            <button>Submit</button>
+            <button disabled>Submit</button>
           </form>
         </div>
 
@@ -321,7 +326,9 @@
         spinner_spacing: 4,
         spinner_message: "I'll start changing in 4 seconds",
         spinner_text_fg_color: undefined,
-        spinner_font_size: 13
+        spinner_font_size: 13,
+        custom_paragraphs: '',
+        show_spinner: false
       }
     },
     computed: {
@@ -342,6 +349,22 @@
       },
       cell_cls() {
         return 'ph1 pv1 ba b--moon-gray'
+      }
+    },
+    methods: {
+      fillCustomParagraphs() {
+        // http://loripsum.net/api
+        // http://thecatapi.com/api/images/get?format=xml&results_per_page=20
+        this.show_spinner = true
+        this.customParagraphs = this.$http.get('https://baconipsum.com/api/?type=all-meat&paras=1&start-with-lorem=1&format=html')
+        .then(({bodyText}) => {
+          this.show_spinner = false
+          this.custom_paragraphs = bodyText
+        })
+        .catch(error => {
+          this.show_spinner = false
+          console.log(error)
+        })
       }
     },
     mounted() {
