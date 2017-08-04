@@ -1,6 +1,6 @@
 <template>
-  <div name="root-spinner">
-    <div class="vue-simple-spinner" :style="spinner_style" name="spinner"></div>
+  <div :style="root_style">
+    <div class="vue-simple-spinner" :style="spinner_style"></div>
     <div class="vue-simple-spinner" :style="text_style" v-if="message.length > 0">{{message}}</div>
   </div>
 </template>
@@ -114,7 +114,7 @@
 
         return isNumber(this.fontSize) ? this.fontSize : 13
       },
-      spinner_style() {
+      default_style() {
         return {
           'margin': '0 auto',
           'border-radius': '100%',
@@ -125,6 +125,30 @@
           'animation': 'vue-simple-spinner-spin '+this.speed+'s linear infinite'
         }
       },
+      inner_style() {
+        let innerStyle = this.default_style
+        innerStyle.position = 'absolute'
+        innerStyle.left = '0'
+        innerStyle.right = '0'
+        innerStyle.top = '0'
+        innerStyle.bottom = '0'
+        innerStyle.margin = 'auto !important'
+        return innerStyle
+      },
+      spinner_style() {
+        return this.insideParent == true ? this.inner_style : this.default_style
+      },
+      root_style() {
+        var innerRootStyle = {
+          'text-align': 'right',
+          'position': 'absolute',
+          'width': '100%',
+          'height': '100%',
+          'z-index': '5',
+          'background-color': 'rgba(220, 220, 220, 0.5)'
+        }
+        return this.insideParent == true ? innerRootStyle : {'text-align': 'right'}
+      },
       text_style() {
         return {
           'margin-top': this.text_margin_top+'px',
@@ -133,32 +157,6 @@
           'text-align': 'center'
         }
       },
-    },
-    watch: {
-      insideParent() {
-        this.toggleInsideParent(this.insideParent)
-      }
-    },
-    methods: {
-      toggleInsideParent(renderInsideParent) {
-        let spinnerElement = document.getElementsByName("spinner")[0]
-        let rootSpinnerElement = document.getElementsByName("root-spinner")[0]
-        let spinnerParent = rootSpinnerElement.parentNode
-        console.log(spinnerParent)
-        if(renderInsideParent) {
-          spinnerElement.classList.add('inner-spinner')
-          rootSpinnerElement.classList.add('root-spinner')
-          spinnerParent.classList.add('spinner-parent')
-        }
-        else {
-          spinnerElement.classList.remove('inner-spinner')
-          rootSpinnerElement.classList.remove('root-spinner')
-          spinnerParent.classList.remove('spinner-parent')
-        }
-      }
-    },
-    mounted() {
-      this.toggleInsideParent(this.insideParent)
     }
   }
 </script>
@@ -166,25 +164,6 @@
 <style>
   .vue-simple-spinner {
     transition: all 0.3s linear;
-  }
-
-  .inner-spinner {
-    position: absolute;
-    left:0; right:0;
-    top:0; bottom:0;
-    margin: auto !important;
-  }
-
-  .root-spinner {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 5;
-    background-color: rgba(220, 220, 220, 0.5);
-  }
-
-  .spinner-parent {
-    position: relative;
   }
 
   @keyframes vue-simple-spinner-spin {

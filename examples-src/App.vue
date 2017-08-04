@@ -137,6 +137,88 @@
         </div>
 
         <div :class="header_cls">
+          <div class="pb2 f3">Fit to Parent Element</div>
+          <div class="f6">Spinners can also only be rendered inside it's parent elements. Very usefull when using ajax requests (the parent must have the position: relative).</div>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <div :class="label_cls">Rendered inside a Form</div>
+          <form style="position: relative; width: 90%; margin: auto">
+            <spinner :inside-parent="true"></spinner>
+            <h4>A Form</h4>
+            <ul>
+              <li>
+                <label>Label 1</label>
+                <input type="text" />
+              </li>
+              <li>
+                <label>Label 2</label>
+                <input type="text" />
+              </li>
+              <br><br>
+              <li>
+                <label>Label 3</label>
+                <input type="text" />
+              </li>
+              <li>
+                <label>Label 4</label>
+                <input type="text" />
+              </li>
+              <br><br>
+              <li>
+                <label>Label 5</label>
+                <input type="text" />
+              </li>
+              <li>
+                <label>Label 6</label>
+                <input type="text" />
+              </li>
+            </ul>
+            <button>Submit</button>
+          </form>
+        </div>
+        <div :class="box_cls" :style="box_style">
+          <br>
+          <div :class="label_cls">Rendered in part of a Form</div>
+          <form style="position: relative; width: 90%; margin: auto">
+            <h4>A Form</h4>
+            <ul>
+              <div style="position: relative">
+                <spinner :inside-parent="true"></spinner>
+                <li>
+                  <label>Label 1</label>
+                  <input type="text" />
+                </li>
+                <li>
+                  <label>Label 2</label>
+                  <input type="text" />
+                </li>
+                <br><br>
+                <li>
+                  <label>Label 3</label>
+                  <input type="text" />
+                </li>
+                <li>
+                  <label>Label 4</label>
+                  <input type="text" />
+                </li>
+                <br><br>
+                <button>Request Data</button>
+              </div>
+              <br>
+              <li>
+                <label>Label 5</label>
+                <input type="text" />
+              </li>
+              <li>
+                <label>Label 6</label>
+                <input type="text" />
+              </li>
+            </ul>
+            <button>Submit</button>
+          </form>
+        </div>
+
+        <div :class="header_cls">
           <div class="pb2 f3">Full Power of Vue.js</div>
           <div class="f6">With the power of the Vue.js virtual DOM, properties can be updated without needing to re-render the entire component.</div>
         </div>
@@ -187,6 +269,10 @@
                   <tr>
                     <td :class="cell_cls">Text Foreground Color:</td>
                     <td :class="cell_cls">{{spinner_text_fg_color}}</td>
+                  </tr>
+                  <tr>
+                    <td :class="cell_cls">Inside Parent:</td>
+                    <td :class="cell_cls">false</td>
                   </tr>
                 </tbody>
               </table>
@@ -319,5 +405,17 @@
 
   .css-box + .css-box {
     border-top: 1px solid rgba(0,0,0,0.1)
+  }
+
+  ul {
+    width: 100%;
+  }
+  ul li {
+    width: 49%;
+    display: inline-block;
+  }
+
+  ul li > * {
+    width: 100%;
   }
 </style>
