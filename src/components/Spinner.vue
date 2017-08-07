@@ -1,5 +1,5 @@
 <template>
-  <div style="text-align: right">
+  <div :style="root_style">
     <div class="vue-simple-spinner" :style="spinner_style"></div>
     <div class="vue-simple-spinner" :style="text_style" v-if="message.length > 0">{{message}}</div>
   </div>
@@ -49,6 +49,10 @@
       'text-fg-color': {
         type: String,
         default: '#555'
+      },
+      'inside-parent': {
+        type: Boolean,
+        default: false
       }
     },
     computed: {
@@ -110,7 +114,7 @@
 
         return isNumber(this.fontSize) ? this.fontSize : 13
       },
-      spinner_style() {
+      default_style() {
         return {
           'margin': '0 auto',
           'border-radius': '100%',
@@ -120,6 +124,30 @@
           'height': this.size_px+'px',
           'animation': 'vue-simple-spinner-spin '+this.speed+'s linear infinite'
         }
+      },
+      inner_style() {
+        let innerStyle = this.default_style
+        innerStyle.position = 'absolute'
+        innerStyle.left = '0'
+        innerStyle.right = '0'
+        innerStyle.top = '0'
+        innerStyle.bottom = '0'
+        innerStyle.margin = 'auto !important'
+        return innerStyle
+      },
+      spinner_style() {
+        return this.insideParent == true ? this.inner_style : this.default_style
+      },
+      root_style() {
+        var innerRootStyle = {
+          'text-align': 'right',
+          'position': 'absolute',
+          'width': '100%',
+          'height': '100%',
+          'z-index': '5',
+          'background-color': 'rgba(220, 220, 220, 0.5)'
+        }
+        return this.insideParent == true ? innerRootStyle : {'text-align': 'right'}
       },
       text_style() {
         return {

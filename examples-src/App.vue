@@ -252,7 +252,9 @@
         spinner_spacing: 4,
         spinner_message: "I'll start changing in 4 seconds",
         spinner_text_fg_color: undefined,
-        spinner_font_size: 13
+        spinner_font_size: 13,
+        custom_paragraphs: '',
+        show_spinner: false
       }
     },
     computed: {
@@ -273,6 +275,22 @@
       },
       cell_cls() {
         return 'ph1 pv1 ba b--moon-gray'
+      }
+    },
+    methods: {
+      fillCustomParagraphs() {
+        // http://loripsum.net/api
+        // http://thecatapi.com/api/images/get?format=xml&results_per_page=20
+        this.show_spinner = true
+        this.customParagraphs = this.$http.get('https://baconipsum.com/api/?type=all-meat&paras=1&start-with-lorem=1&format=html')
+        .then(({bodyText}) => {
+          this.show_spinner = false
+          this.custom_paragraphs = bodyText
+        })
+        .catch(error => {
+          this.show_spinner = false
+          console.log(error)
+        })
       }
     },
     mounted() {
@@ -339,5 +357,17 @@
 
   .css-box:last-child {
     border-bottom: 0;
+  }
+
+  ul {
+    width: 100%;
+  }
+  ul li {
+    width: 49%;
+    display: inline-block;
+  }
+
+  ul li > * {
+    width: 100%;
   }
 </style>
