@@ -15,7 +15,7 @@
         <div class="pt5 nb5" id="default-spinners">
           <a href="#default-spinners" :class="header_cls">
             <h2 class="ma0 pb2 fw4 lh-1">Default Spinners</h2>
-            <p class="ma0 f6">Spinners can be used with either no or very little configuration.</p>
+            <p class="ma0 f6">Spinners can be used with either no configuration or very little configuration.</p>
           </a>
           <div :class="box_cls" :style="box_style">
             <div :class="label_cls">Default spinner</div>
@@ -260,7 +260,7 @@
         return version
       },
       header_cls() {
-        return 'db mt5 pv2 dark-gray hover-blue bb bw1 b--black-10 lh-1 no-underline'
+        return 'db mt5 mb4 pb2 dark-gray hover-blue bb bw1 b--black-10 lh-1 no-underline'
       },
       box_cls() {
         return 'db pt2 pb5 ph3 ph0-l bb b--black-10 relative css-box'
