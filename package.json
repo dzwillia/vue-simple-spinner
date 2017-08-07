@@ -1,6 +1,6 @@
 {
   "name": "vue-simple-spinner",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A simple, flexible spinner for Vue.js",
   "author": "David Z. Williams <dave@flex.io>",
   "main": "dist/vue-simple-spinner.js",
@@ -30,8 +30,7 @@
     "url": "https://github.com/dzwillia/vue-simple-spinner/issues"
   },
   "homepage": "https://github.com/dzwillia/vue-simple-spinner/",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^6.7.7",
     "babel-core": "^6.0.0",

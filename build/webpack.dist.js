@@ -40,12 +40,14 @@ config.module.rules[0].options.loaders = {
 }
 */
 
+config.plugins = config.plugins.concat([
+  new webpack.LoaderOptionsPlugin({
+    minimize: true
+  })
+])
+
 if (options.isProduction) {
   config.plugins = config.plugins.concat([
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
-    }),
-
     // Set the production environment
     new webpack.DefinePlugin({
       'process.env': {
