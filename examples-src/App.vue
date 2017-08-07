@@ -260,7 +260,7 @@
         return version
       },
       header_cls() {
-        return 'db mt5 pa3 bg-mid-gray white darken-10 br2-l lh-1 no-underline'
+        return 'db mt5 pv2 dark-gray hover-blue bb bw1 b--black-10 lh-1 no-underline'
       },
       box_cls() {
         return 'db pt2 pb5 ph3 ph0-l bb b--black-10 relative css-box'
