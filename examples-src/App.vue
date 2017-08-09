@@ -14,8 +14,8 @@
 
         <div class="pt5 nb5" id="default-spinners">
           <a href="#default-spinners" :class="header_cls">
-            <h2 class="ma0 pb2 fw4 lh-1">Default Spinners</h2>
-            <p class="ma0 f6">Spinners can be used with either no configuration or very little configuration.</p>
+            <h2 class="ma0 pb2 f2 fw4 lh-1">Default Spinners</h2>
+            <p class="ma0 lh-copy f6">Spinners can be used with either no configuration or very little configuration.</p>
           </a>
           <div :class="box_cls" :style="box_style">
             <div :class="label_cls">Default spinner</div>
@@ -29,8 +29,8 @@
 
         <div class="pt5 nb5" id="standard-sizes">
           <a href="#standard-sizes" :class="header_cls">
-            <h2 class="ma0 pb2 fw4 lh-1">Standard Sizes</h2>
-            <p class="ma0 f6">Spinners come with some standard sizes which size both the spinner element as well as the message text.</p>
+            <h2 class="ma0 pb2 f2 fw4 lh-1">Standard Sizes</h2>
+            <p class="ma0 lh-copy f6">Spinners come with some standard sizes which size both the spinner element as well as the message text.</p>
           </a>
           <div :class="box_cls" :style="box_style">
             <div :class="label_cls">Tiny spinner</div>
@@ -64,8 +64,8 @@
 
         <div class="pt5 nb5" id="custom-sizes">
           <a href="#custom-sizes" :class="header_cls">
-            <h2 class="ma0 pb2 fw4 lh-1">Custom Sizes</h2>
-            <p class="ma0 f6">Spinners can also have any arbitrary size (both overall size as well as line size).</p>
+            <h2 class="ma0 pb2 f2 fw4 lh-1">Custom Sizes</h2>
+            <p class="ma0 lh-copy f6">Spinners can also have any arbitrary size (both overall size as well as line size).</p>
           </a>
           <div :class="box_cls" :style="box_style">
             <div :class="label_cls">Custom size (55px)</div>
@@ -95,8 +95,8 @@
 
         <div class="pt5 nb5" id="custom-colors">
           <a href="#custom-colors" :class="header_cls">
-            <h2 class="ma0 pb2 fw4 lh-1">Custom Colors</h2>
-            <p class="ma0 f6">Line foreground, line background and message text colors can all be changed.</p>
+            <h2 class="ma0 pb2 f2 fw4 lh-1">Custom Colors</h2>
+            <p class="ma0 lh-copy f6">Line foreground, line background and message text colors can all be changed.</p>
           </a>
           <div :class="box_cls" :style="box_style">
             <div :class="label_cls">Line foreground color</div>
@@ -114,8 +114,8 @@
 
         <div class="pt5 nb5" id="custom-speeds">
           <a href="#custom-speeds" :class="header_cls">
-            <h2 class="ma0 pb2 fw4 lh-1">Custom Speeds</h2>
-            <p class="ma0 f6">The speed of the spinner can be changed to any arbitrary speed.</p>
+            <h2 class="ma0 pb2 f2 fw4 lh-1">Custom Speeds</h2>
+            <p class="ma0 lh-copy f6">The speed of the spinner can be changed to any arbitrary speed.</p>
           </a>
           <div :class="box_cls" :style="box_style">
             <div :class="label_cls">Fast (0.4s)</div>
@@ -133,8 +133,8 @@
 
         <div class="pt5 nb5" id="custom-messages">
           <a href="#custom-messages" :class="header_cls">
-            <h2 class="ma0 pb2 fw4 lh-1">Custom Messages</h2>
-            <p class="ma0 f6">The spacing, font size and color of the message can be changed.</p>
+            <h2 class="ma0 pb2 f2 fw4 lh-1">Custom Messages</h2>
+            <p class="ma0 lh-copy f6">The spacing, font size and color of the message can be changed.</p>
           </a>
           <div :class="box_cls" :style="box_style">
             <div :class="label_cls">Spacing (55px)</div>
@@ -152,8 +152,8 @@
 
         <div class="pt5 nb5" id="full-power-of-vuejs">
           <a href="#full-power-of-vuejs" :class="header_cls">
-            <h2 class="ma0 pb2 fw4 lh-1">Full Power of Vue.js</h2>
-            <p class="ma0 f6">With the power of the Vue.js virtual DOM, properties can be updated without needing to re-render the entire component.</p>
+            <h2 class="ma0 pb2 f2 fw4 lh-1">Full Power of Vue.js</h2>
+            <p class="ma0 lh-copy f6">With the power of the Vue.js virtual DOM, properties can be updated without needing to re-render the entire component.</p>
           </a>
           <div :class="box_cls" :style="box_style">
             <div :class="label_cls">
@@ -260,10 +260,10 @@
         return version
       },
       header_cls() {
-        return 'db mt5 mb4 pb2 dark-gray hover-blue bb bw1 b--black-10 lh-1 no-underline'
+        return 'db mt5 pb3 dark-gray hover-blue lh-1 no-underline'
       },
       box_cls() {
-        return 'db pt2 pb5 ph3 ph0-l bb b--black-10 relative css-box'
+        return 'db pt3 pb5 ph3 ph0-l bt b--black-10 relative'
       },
       box_style() {
         return 'min-height: 100px'
@@ -335,9 +335,5 @@
 
   .lh-1 {
     line-height: 1;
-  }
-
-  .css-box:last-child {
-    border-bottom: 0;
   }
 </style>
