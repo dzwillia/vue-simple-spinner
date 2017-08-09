@@ -1,5 +1,5 @@
 /*!
- * vue-simple-spinner v1.2.2 (https://github.com/dzwillia/vue-simple-spinner)
+ * vue-simple-spinner v1.2.3 (https://github.com/dzwillia/vue-simple-spinner)
  * (c) 2017 David Z. Williams
  * Released under the MIT License.
  */
@@ -405,11 +405,7 @@ module.exports = function normalizeComponent (
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticStyle: {
-      "text-align": "right"
-    }
-  }, [_c('div', {
+  return _c('div', [_c('div', {
     staticClass: "vue-simple-spinner",
     style: (_vm.spinner_style)
   }), _vm._v(" "), (_vm.message.length > 0) ? _c('div', {
