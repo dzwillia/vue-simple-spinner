@@ -150,6 +150,53 @@
           </div>
         </div>
 
+        <div class="pt5 nb5" id="custom-messages">
+          <a href="#custom-messages" :class="header_cls">
+            <h2 class="ma0 pb2 f2 fw4 lh-1">Layout Inside Parent</h2>
+            <p class="ma0 lh-copy f6">Easily change the location of the spinner inside its parent element. The spinner element's CSS is very unopinionated which allows for easy application of CSS or inline styles to position it. In general, most positioning can happen by changing styles on the parent element.</p>
+          </a>
+          <div :class="box_cls" :style="box_style">
+            <div :class="label_cls">Center-aligned (default)</div>
+            <spinner></spinner>
+          </div>
+          <div :class="box_cls" :style="box_style">
+            <div :class="label_cls">Left-aligned</div>
+            <div class="tl">
+              <spinner class="dib"></spinner>
+            </div>
+          </div>
+          <div :class="box_cls" :style="box_style">
+            <div :class="label_cls">Right-aligned</div>
+            <div class="tr">
+              <spinner class="dib"></spinner>
+            </div>
+          </div>
+          <div :class="box_cls" :style="box_style">
+            <div :class="label_cls">Centered vertically and horizontally</div>
+            <div class="flex flex-column items-center justify-center h4 bg-black-40">
+              <spinner></spinner>
+            </div>
+          </div>
+          <div :class="box_cls" :style="box_style">
+            <div :class="label_cls">Bottom-left corner</div>
+            <div class="flex flex-column items-start justify-end h4 bg-black-40">
+              <spinner class="ma3"></spinner>
+            </div>
+          </div>
+          <div :class="box_cls" :style="box_style">
+            <div :class="label_cls">Centered at bottom</div>
+            <div class="flex flex-column items-center justify-end h4 bg-black-40">
+              <spinner class="ma3"></spinner>
+            </div>
+          </div>
+          <div :class="box_cls" :style="box_style">
+            <div :class="label_cls">Bottom-right corner</div>
+            <div class="flex flex-column items-end justify-end h4 bg-black-40">
+              <spinner class="ma3"></spinner>
+            </div>
+          </div>
+        </div>
+
         <div class="pt5 nb5" id="full-power-of-vuejs">
           <a href="#full-power-of-vuejs" :class="header_cls">
             <h2 class="ma0 pb2 f2 fw4 lh-1">Full Power of Vue.js</h2>
@@ -162,8 +209,8 @@
                 <table class="collapse">
                   <thead>
                     <tr>
-                      <th class="tl bg-light-gray" :class="cell_cls">Property</th>
-                      <th class="tl bg-light-gray" :class="cell_cls">Value</th>
+                      <th class="tl bg-near-white" :class="cell_cls">Property</th>
+                      <th class="tl bg-near-white" :class="cell_cls">Value</th>
                     </tr>
                   </thead>
                   <tbody>
