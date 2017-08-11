@@ -10,6 +10,10 @@ vue-simple-spinner is designed to be a lightweight [Vue.js](http://vuejs.org) sp
 
 [https://dzwillia.github.io/vue-simple-spinner/examples](https://dzwillia.github.io/vue-simple-spinner/examples)
 
+## JsFiddle Demo
+
+[http://jsfiddle.net/dzwillia/kc5ka8zu](http://jsfiddle.net/dzwillia/kc5ka8zu)
+
 ## Requirements
 * [Vue.js](http://vuejs.org/) (^v2.1.4)
 
