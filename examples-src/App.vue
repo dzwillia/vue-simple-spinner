@@ -150,8 +150,8 @@
           </div>
         </div>
 
-        <div class="pt5 nb5" id="custom-messages">
-          <a href="#custom-messages" :class="header_cls">
+        <div class="pt5 nb5" id="layout-inside-parent">
+          <a href="#layout-inside-parent" :class="header_cls">
             <h2 class="ma0 pb2 f2 fw4 lh-1">Layout Inside Parent</h2>
             <p class="ma0 lh-copy f6">Easily change the location of the spinner inside its parent element. The spinner element's CSS is very unopinionated which allows for easy application of CSS or inline styles to position it. In general, most positioning can happen by changing styles on the parent element.</p>
           </a>

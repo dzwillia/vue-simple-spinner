@@ -6,11 +6,10 @@
   "main": "dist/vue-simple-spinner.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.dev.js --open --inline --hot",
-    "build": "webpack --config build/webpack.dist.js",
     "build:debug": "cross-env NODE_ENV=debug webpack --config build/webpack.dist.js",
     "build:release": "cross-env NODE_ENV=production webpack --config build/webpack.dist.js",
     "build:examples": "webpack --config build/webpack.examples.js",
-    "build:all": "npm run build:debug && npm run build:release && npm run build:examples",
+    "build": "npm run build:debug && npm run build:release && npm run build:examples",
     "clean": "rimraf ./examples/examples.bundle.css ./examples/examples.bundle.js"
   },
   "repository": {

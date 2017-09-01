@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="vue-simple-spinner" :style="spinner_style"></div>
-    <div class="vue-simple-spinner" :style="text_style" v-if="message.length > 0">{{message}}</div>
+    <div class="vue-simple-spinner-text" :style="text_style" v-if="message.length > 0">{{message}}</div>
   </div>
 </template>
 
