@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>vue-simple-spinner - A simple, flexible spinner for Vue.js</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="A simple, flexible spinner for Vue.js">
+
+    <meta name="twitter:title" content="dzwillia/vue-simple-spinner">
+    <meta name="twitter:description" content="A simple, flexible spinner for Vue.js">
+
+    <meta property="og:title" content="dzwillia/vue-simple-spinner">
+    <meta property="og:url" content="https://github.com/dzwillia/vue-simple-spinner/">
+    <meta property="og:description" content="A simple, flexible spinner for Vue.js">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.6.1/tachyons.min.css" integrity="sha256-eu1dpzpUytdOAUmB67Qi3mBb6HFjruP8BoAzk4lKiSc=" crossorigin="anonymous" />
+    <style>
+      body { padding: 40px }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <vue-simple-spinner></vue-simple-spinner>
+      <vue-simple-spinner class="mt4" message="Loading..."></vue-simple-spinner>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.js"></script>
+    <script src="dist/vue-simple-spinner.min.js"></script>
+    <script>
+      new Vue({
+        el: '#app'
+      });
+    </script>
+  </body>
+</html>
