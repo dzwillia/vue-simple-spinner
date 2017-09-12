@@ -12,7 +12,7 @@ const config = merge(base, {
   output: {
     filename: options.isProduction ? 'vue-simple-spinner.min.js' : 'vue-simple-spinner.js',
     path: options.paths.output.main,
-    library: 'vue-simple-spinner',
+    library: 'VueSimpleSpinner',
     libraryExport: 'default',
     libraryTarget: 'umd'
   },
