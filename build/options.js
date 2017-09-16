@@ -12,7 +12,7 @@ const banner =
 
 module.exports = {
   banner,
-
+  version,
   isProduction: process.env.NODE_ENV === 'production',
 
   paths: {

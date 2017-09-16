@@ -30,6 +30,9 @@ const config = merge(base, {
 config.plugins = config.plugins.concat([
   new webpack.LoaderOptionsPlugin({
     minimize: true
+  }),
+  new webpack.DefinePlugin({
+    VERSION: JSON.stringify(options.version)
   })
 ])
 
