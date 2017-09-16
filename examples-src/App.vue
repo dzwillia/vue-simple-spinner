@@ -281,7 +281,6 @@
 
 <script>
   import Spinner from '../src/components/Spinner.vue'
-  import { version } from '../package.json'
 
   export default {
     name: 'app',
@@ -304,7 +303,7 @@
     },
     computed: {
       version() {
-        return version
+        return VESRION
       },
       header_cls() {
         return 'db mt5 pb3 dark-gray hover-blue lh-1 no-underline'

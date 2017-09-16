@@ -17,7 +17,11 @@ const config = merge(base, {
     path: options.paths.output.examples
   },
 
-  plugins: [],
+  plugins: [
+    new webpack.DefinePlugin({
+      VERSION: JSON.stringify(options.version)
+    })
+  ],
 
   devServer: {
     contentBase: options.paths.output.examples,
