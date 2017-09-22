@@ -303,7 +303,7 @@
     },
     computed: {
       version() {
-        return VESRION
+        return VERSION
       },
       header_cls() {
         return 'db mt5 pb3 dark-gray hover-blue lh-1 no-underline'
