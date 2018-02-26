@@ -1,6 +1,6 @@
 /*!
- * vue-simple-spinner v1.2.8 (https://github.com/dzwillia/vue-simple-spinner)
- * (c) 2017 David Z. Williams
+ * vue-simple-spinner v1.2.9 (https://github.com/dzwillia/vue-simple-spinner)
+ * (c) 2018 David Z. Williams
  * Released under the MIT License.
  */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -536,7 +536,6 @@ var isNumber = function isNumber(n) {
 };
 
 exports.default = {
-  name: 'vue-simple-spinner',
   props: {
     'size': {
       default: 32
