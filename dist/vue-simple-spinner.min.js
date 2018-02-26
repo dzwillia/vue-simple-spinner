@@ -1,5 +1,5 @@
 /*!
- * vue-simple-spinner v1.2.9 (https://github.com/dzwillia/vue-simple-spinner)
+ * vue-simple-spinner v1.2.10 (https://github.com/dzwillia/vue-simple-spinner)
  * (c) 2018 David Z. Williams
  * Released under the MIT License.
  */
