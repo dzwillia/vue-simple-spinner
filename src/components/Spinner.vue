@@ -11,7 +11,6 @@
   }
 
   export default {
-    name: 'vue-simple-spinner',
     props: {
       'size': {
         // either a number (pixel width/height) or 'tiny', 'small',
