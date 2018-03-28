@@ -59,7 +59,7 @@ Example:
 </head>
 <body>
   <div id="app">
-    <vue-simple-spinner></vue-simple-spinner>
+    <spinner></spinner>
   </div>
 
   <script src="path/to/vue.js"></script>
