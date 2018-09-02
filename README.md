@@ -10,10 +10,6 @@ vue-simple-spinner is designed to be a lightweight [Vue.js](http://vuejs.org) sp
 
 [https://dzwillia.github.io/vue-simple-spinner/examples](https://dzwillia.github.io/vue-simple-spinner/examples)
 
-## JsFiddle Demo
-
-[http://jsfiddle.net/dzwillia/kc5ka8zu](http://jsfiddle.net/dzwillia/kc5ka8zu)
-
 ## Requirements
 * [Vue.js](http://vuejs.org/) (^v2.1.4)
 
@@ -72,6 +68,39 @@ Example:
 </body>
 </html>
 ```
+
+## Examples
+
+### Medium size
+```
+<vue-simple-spinner size="medium" />
+```
+
+### Custom line color
+```
+<vue-simple-spinner line-fg-color="#009900" />
+```
+
+### Custom font size and message
+```
+<vue-simple-spinner spacing="55" message="I'm 55px below the vue-simple-spinner" />
+```
+
+[More live code examples on JSFiddle](http://jsfiddle.net/dzwillia/kc5ka8zu)
+
+## Options
+
+| Props          | Type             | Values                                         | Default          |
+| -------------- |:-----------------|:-----------------------------------------------|:-----------------|
+| size           | Number \| String | tiny, small, medium, large, huge, massive, {n} | 32               |
+| line-size      | Number           | Any Number                                     | 3                |
+| line-bg-color  | String           | Color                                          | #eee             |
+| line-fg-color  | String           | Color                                          | #2196f3          |
+| speed          | Number           | Number (in seconds)                            | 0.8              |
+| spacing        | Number           | Number (in pixels)                             | 4                |
+| message        | String           | Text to display                                | _(empty string)_ |
+| font-size      | Number           | Number (in pixels)                             | 13               |
+| text-fg-color  | String           | Color                                          | #555             |
 
 ## License
 vue-simple-spinner is open source and released under the [MIT License](LICENSE).
